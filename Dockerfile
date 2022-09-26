@@ -1,6 +1,8 @@
 # the first stage of our build will use a maven 3.6.3 parent image
 FROM maven:3.6.3-jdk-11 AS MAVEN_BUILD
 
+EXPOSE 9090
+
 # copy the pom and src code to the container
 COPY ./ ./
  
