@@ -2,7 +2,10 @@ pipeline {
     agent none 
     stages {
         stage('Build') {
-            agent { any 'maven:3.6.3-jdk-11' } 
+            agent { any } 
+            tools { 
+                maven '3.8.1'
+            }
             steps {
                 echo 'Hello, Maven'
                 sh 'mvn -B -DskipTests clean package'
